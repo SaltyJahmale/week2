@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Week2</title>
+</head>
+<body>
+
+    {# Unsafe unescaped characters#}
+{#    <article>#}
+{#        {% if result %}#}
+{#            {% for data in result %}#}
+{#                <p>{{ data[0] | safe }}</p>#}
+{#                <p>{{ data[1] | safe }}</p>#}
+{#            {% endfor %}#}
+{#        {% endif %}#}
+{#    </article>#}
+
+    {#  Safe  #}
+    <article>
+        {% if result %}
+            {% for data in result %}
+                <p>{{ data[0] }}</p>
+                <p>{{ data[1] }}</p>
+            {% endfor %}
+        {% endif %}
+    </article>
+
+    <form method="post" action="/add_header">
+        <button type="submit"> Persist headerdata </button>
+    </form>
+
+</body>
+</html>
